@@ -5,6 +5,8 @@ import static org.junit.Assert.assertArrayEquals;
 public class MainTest {
     @Test
     public void searchThreeMaxTest() {
+        assertArrayEquals(new int[]{}, Main.searchThreeMax(null));
+
         assertArrayEquals(new int[]{}, Main.searchThreeMax(new int[]{}));
         assertArrayEquals(new int[]{7}, Main.searchThreeMax(new int[]{7}));
         assertArrayEquals(new int[]{2, 1}, Main.searchThreeMax(new int[]{2, 1}));

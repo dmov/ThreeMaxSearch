@@ -2,6 +2,10 @@ import java.util.Arrays;
 
 public class Main {
     static int[] searchThreeMax(final int[] array) {
+        if (array == null) {
+            return new int[]{};
+        }
+
         if (array.length <= 1) {
             return array;
         }
