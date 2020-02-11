@@ -1,22 +1,16 @@
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 public class MainTest {
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    @Test(expected = IllegalStateException.class)
-    public void testEmptyArray() {
-        Main.searchThreeMax(new int[]{});
-    }
-
-    @SuppressWarnings("ResultOfMethodCallIgnored")
-    @Test(expected = IllegalStateException.class)
-    public void testNotEnoughLengthArray() {
-        Main.searchThreeMax(new int[]{1, 1});
-    }
-
     @Test
     public void searchThreeMaxTest() {
+        assertArrayEquals(new int[]{}, Main.searchThreeMax(new int[]{}));
+        assertArrayEquals(new int[]{7}, Main.searchThreeMax(new int[]{7}));
+        assertArrayEquals(new int[]{2, 1}, Main.searchThreeMax(new int[]{2, 1}));
+        assertArrayEquals(new int[]{2, 1}, Main.searchThreeMax(new int[]{1, 2}));
+        assertArrayEquals(new int[]{5, 5}, Main.searchThreeMax(new int[]{5, 5}));
+
         assertArrayEquals(new int[]{1, 1, 1}, Main.searchThreeMax(new int[]{1, 1, 1}));
         assertArrayEquals(new int[]{0, 0, 0}, Main.searchThreeMax(new int[]{0, 0, 0, 0, 0}));
         assertArrayEquals(new int[]{5, -1, -1}, Main.searchThreeMax(new int[]{-1, 5, -1}));

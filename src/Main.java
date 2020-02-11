@@ -2,8 +2,15 @@ import java.util.Arrays;
 
 public class Main {
     static int[] searchThreeMax(final int[] array) {
-        if (array.length < 3) {
-            throw new IllegalStateException("The length of the array must be at least 3 elements");
+        if (array.length <= 1) {
+            return array;
+        }
+
+        if (array.length == 2) {
+            if (array[0] >= array[1]) {
+                return array;
+            }
+            return new int[]{array[1], array[0]};
         }
 
         int firstMax = Integer.MIN_VALUE;
